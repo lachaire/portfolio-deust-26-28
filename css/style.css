@@ -1,0 +1,40 @@
+body {
+    background-color: #bbbbbb; /* Couleur de fond douce pour la page */
+    color: #333333;            /* Couleur principale du texte */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+header {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+}
+
+.logo_ulco {
+    width: 180px;
+    height: auto;
+}
+
+/* === ÉTAPE 2 : Style de la liste du menu (Horizontal + centré) === */
+.menu-navigation {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    padding: 0;
+    margin: 20px 0;
+}
+
+/* === ÉTAPE 3 : Style des liens du menu (Couleurs + boutons) === */
+.menu-navigation a {
+    color: rgb(0, 13, 131);
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.15);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
