@@ -1,15 +1,17 @@
+/* === Style général de la page === */
 body {
-    background-color: #bbbbbb; /* Couleur de fond d'origine */
+    background-color: #bbbbbb;
     color: #333333;
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 20px;
 }
 
+/* === En-tête (Header) === */
 header {
     display: flex; 
     align-items: center; 
-    justify-content: space-between; /* Répartit l'espace entre la gauche, le milieu et la droite */
+    justify-content: space-between;
     gap: 15px; 
     width: 100%;
 }
@@ -26,11 +28,11 @@ header {
 }
 
 .batiment_ulco {
-    width: 350px;         /* Taille grande mais maîtrisée */
-    max-height: 150px;    /* Empêche l'image de devenir trop haute */
-    object-fit: cover;    /* Évite que l'image ne soit déformée */
+    width: 350px;
+    max-height: 150px;
+    object-fit: cover;
     height: auto;
-    border-radius: 20px;   /* Coins arrondis */
+    border-radius: 20px;
 }
 
 /* === Style du menu (centré) === */
@@ -52,4 +54,79 @@ header {
     border-radius: 5px;
     background-color: rgba(255, 255, 255, 0.15);
     transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.menu-navigation a:hover {
+    background-color: rgb(0, 13, 131);
+    color: #ffffff;
+}
+
+/* === Conteneur de la section cours === */
+.conteneur-cours {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.3);
+    padding: 30px;
+    border-radius: 15px;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* === ZONE DE MONTAGE (SUPERPOSITION) === */
+.zone-montage {
+    position: relative; /* Repère pour le positionnement absolu */
+    width: 100%;
+    max-width: 450px;
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+}
+
+/* 1. Couche du bas : Vincent */
+.avatar-vincent {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+    border-radius: 15px;
+    z-index: 1;
+}
+
+/* 2. Couche du milieu : Bouton placé au niveau des yeux */
+.btn-sur-yeux {
+    position: absolute;
+    top: 35%; /* Ajuste la hauteur verticalement sur les yeux */
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centrage parfait */
+    z-index: 2; /* Passe au-dessus de Vincent */
+    
+    background-color: rgb(0, 13, 131);
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    white-space: nowrap; /* Empêche le texte du bouton de sauter à la ligne */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-sur-yeux:hover {
+    background-color: rgb(0, 25, 180);
+    transform: translate(-50%, -50%) scale(1.08);
+}
+
+/* 3. Couche du haut : Les deux hommes qui pointent du doigt */
+.img-wow-superposee {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    max-width: 450px;
+    height: auto;
+    z-index: 3; /* Passe au-dessus de tout */
+    pointer-events: none; /* Permet de cliquer sur le bouton en dessous */
 }

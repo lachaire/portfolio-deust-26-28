@@ -3,21 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cours de Vincent Vanneste</title>
+    <title>Mon portfolio - Cours</title>
     <link rel="icon" type="image/svg+xml" href="image/Logo_ulco.svg">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+
+    <!-- En-tête du site -->
     <header>        
-        <a href="index.html">
-            <img src="image/Logo_ulco.svg" alt="Logo de l'ulco" class="logo_ulco">
-        </a>
-        <h1>Cours de Vincent Vanneste</h1>
+        <div class="header-gauche">
+            <a href="index.html">
+                <img src="image/Logo_ulco.svg" alt="Logo de l'ULCO" class="logo_ulco">
+            </a>
+            <h1>Lachaire Louis - Mon portfolio</h1>
+        </div>
+        <img src="image/ulco_batiment.avif" alt="Bâtiment de l'ULCO" class="batiment_ulco">
     </header>
+
+    <!-- Menu de navigation principal -->
+    <nav> 
+        <ul class="menu-navigation">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="cours.html">Cours</a></li>
+            <li><a href="projets.html">Projets</a></li>
+            <li><a href="contact.html">À propos</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Contenu principal -->
     <main>
-        <p>Lien direct du cours de notre cher professeur : 
-            <a href="https://vincent-vanneste.fr/" target="_blank">https://vincent-vanneste.fr/</a>
-        </p>
+        <div class="conteneur-cours">
+            <h2>Cours de Vincent Vanneste</h2>
+
+            <!-- Zone de montage pour la superposition -->
+            <div class="zone-montage">
+                <!-- 1. Fond : Avatar de Vincent -->
+                <img src="image/avatar_vincent.avif" alt="Avatar de Vincent Vanneste" class="avatar-vincent">
+
+                <!-- 2. Milieu : Le bouton sur ses yeux -->
+                <a href="https://vincent-vanneste.fr/" target="_blank" rel="noopener noreferrer" class="btn-sur-yeux">
+                    Le cours incroyable
+                </a>
+
+                <!-- 3. Premier plan : Les deux hommes qui montrent du doigt -->
+                <img src="image/wow.avif" alt="Deux hommes montrant le bouton" class="img-wow-superposee">
+            </div>
+        </div>
     </main>
+
 </body>
 </html>
