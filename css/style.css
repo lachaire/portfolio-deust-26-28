@@ -56,12 +56,13 @@ header {
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.menu-navigation a:hover {
+.menu-navigation a:hover,
+.menu-navigation a.actif {
     background-color: rgb(0, 13, 131);
     color: #ffffff;
 }
 
-/* === Conteneur de la section cours === */
+/* === Conteneur général === *//* (S'adapte à la section cours ou au CV) */
 .conteneur-cours {
     display: flex;
     flex-direction: column;
@@ -69,14 +70,60 @@ header {
     background-color: rgba(255, 255, 255, 0.3);
     padding: 30px;
     border-radius: 15px;
-    max-width: 600px;
+    max-width: 800px;
     margin: 0 auto;
     text-align: center;
 }
 
+/* === Style du visualiseur de CV et des boutons === */
+.cv-media {
+    width: 100%;
+    max-width: 600px;
+    height: 600px;
+    border: none;
+    border-radius: 8px;
+    object-fit: contain;
+    background: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.cv-boutons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.btn-action {
+    background-color: rgb(0, 13, 131);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-action:hover {
+    background-color: rgb(0, 25, 180);
+    transform: scale(1.03);
+}
+
+.btn-telecharger {
+    background-color: #28a743;
+}
+
+.btn-telecharger:hover {
+    background-color: #218838;
+}
+
 /* === ZONE DE MONTAGE (SUPERPOSITION) === */
 .zone-montage {
-    position: relative; /* Repère pour le positionnement absolu */
+    position: relative;
     width: 100%;
     max-width: 450px;
     margin: 20px auto;
@@ -96,10 +143,10 @@ header {
 /* 2. Couche du milieu : Bouton placé au niveau des yeux */
 .btn-sur-yeux {
     position: absolute;
-    top: 35%; /* Ajuste la hauteur verticalement sur les yeux */
+    top: 35%;
     left: 50%;
-    transform: translate(-50%, -50%); /* Centrage parfait */
-    z-index: 2; /* Passe au-dessus de Vincent */
+    transform: translate(-50%, -50%);
+    z-index: 2;
     
     background-color: rgb(0, 13, 131);
     color: #ffffff;
@@ -108,7 +155,7 @@ header {
     text-decoration: none;
     padding: 10px 20px;
     border-radius: 6px;
-    white-space: nowrap; /* Empêche le texte du bouton de sauter à la ligne */
+    white-space: nowrap;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
@@ -127,6 +174,6 @@ header {
     width: 100%;
     max-width: 450px;
     height: auto;
-    z-index: 3; /* Passe au-dessus de tout */
-    pointer-events: none; /* Permet de cliquer sur le bouton en dessous */
+    z-index: 3;
+    pointer-events: none;
 }

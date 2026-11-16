@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon portfolio - CV</title>
+    <link rel="icon" type="image/svg+xml" href="image/Logo_ulco.svg">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- En-tête du site -->
+    <header>        
+        <div class="header-gauche">
+            <a href="index.html">
+                <img src="image/Logo_ulco.svg" alt="Logo de l'ULCO" class="logo_ulco">
+            </a>
+            <h1>Lachaire Louis - Mon portfolio</h1>
+        </div>
+        <!-- Image du bâtiment cliquable vers le site de l'ULCO -->
+        <a href="https://www.univ-littoral.fr" target="_blank" rel="noopener noreferrer">
+            <img src="image/ulco_batiment.avif" alt="Bâtiment de l'ULCO" class="batiment_ulco">
+        </a>
+    </header>
+
+    <!-- Menu de navigation principal -->
+    <nav> 
+        <ul class="menu-navigation">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="cv.html">Mon CV</a></li>
+            <li><a href="cours.html">Cours</a></li>
+            <li><a href="projets.html">Projets</a></li>
+            <li><a href="a-propos.html">À propos</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Contenu principal : Visualiseur de CV optimisé -->
+    <main>
+        <div class="conteneur-cours">
+            <h2>Mon Curriculum Vitae</h2>
+            <p>Affichage optimisé (Image AVIF pour économiser la bande passante ou version PDF interactive - 46 octets de différences 🤓🤌🏿) .</p>
+
+            <!-- Zone d'affichage dynamique -->
+            <div id="visualiseur-cv" style="width: 100%; margin: 20px 0;">
+                <!-- Version Image AVIF (affichée par défaut) -->
+                <img id="cv-image" src="image/cv.avif" alt="CV de Louis Lachaire" class="cv-media">
+                
+                <!-- Version PDF (masquée par défaut) -->
+                <iframe id="cv-pdf" src="image/cv.pdf" class="cv-media" style="display: none;" title="CV PDF"></iframe>
+            </div>
+
+            <!-- Barre de boutons d'action -->
+            <div class="cv-boutons">
+                <button id="btn-vers-pdf" onclick="basculerVersPdf()" class="btn-action">Voir en version PDF</button>
+                <button id="btn-vers-avif" onclick="basculerVersAvif()" class="btn-action" style="display: none;">Voir en version Image (AVIF)</button>
+                
+                <a href="image/cv.avif" download class="btn-action btn-telecharger">Télécharger l'image (AVIF)</a>
+                <a href="image/cv.pdf" download class="btn-action btn-telecharger">Télécharger le PDF</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Script JavaScript pour basculer entre l'image et le PDF sans recharger -->
+    <script>
+        function basculerVersPdf() {
+            document.getElementById('cv-image').style.display = 'none';
+            document.getElementById('cv-pdf').style.display = 'block';
+            document.getElementById('btn-vers-pdf').style.display = 'none';
+            document.getElementById('btn-vers-avif').style.display = 'inline-block';
+        }
+
+        function basculerVersAvif() {
+            document.getElementById('cv-pdf').style.display = 'none';
+            document.getElementById('cv-image').style.display = 'block';
+            document.getElementById('btn-vers-avif').style.display = 'none';
+            document.getElementById('btn-vers-pdf').style.display = 'inline-block';
+        }
+    </script>
+
+</body>
+</html>
