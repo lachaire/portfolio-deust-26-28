@@ -1,3 +1,44 @@
+/* ajuster taille des appareils */
+/* Style de base pour les mobiles */
+body {
+  font-size: 16px;
+  padding: 10px;
+}
+
+/* Pour les tablettes (à partir de 768px de large) */
+@media (min-width: 768px) {
+  body {
+    font-size: 18px;
+    padding: 20px;
+  }
+}
+
+/* Pour les PC / ordinateurs (à partir de 1024px de large) */
+@media (min-width: 1024px) {
+  body {
+    font-size: 20px;
+    padding: 40px;
+  }
+}
+
+/* réorganisent automatiquement les uns sous les autres sur mobile et côte à côte sur PC, utilisez Flexbox */
+.container {
+  display: flex;
+  flex-wrap: wrap; /* Permet aux éléments de passer à la ligne sur mobile */
+  gap: 20px; /* Espace automatique entre les éléments */
+}
+
+
+
+
+
+
+
+
+.item {
+  flex: 1 1 300px; /* S'adapte dynamiquement selon la place disponible */
+}
+
 /* === Style général de la page === */
 body {
     background-color: #bbbbbb;
