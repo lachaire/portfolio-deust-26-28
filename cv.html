@@ -35,48 +35,106 @@
         </ul>
     </nav>
 
-    <!-- Contenu principal : Visualiseur de CV optimisé -->
+    <!-- Contenu principal -->
     <main>
         <div class="conteneur-cours">
             <h2>Mon Curriculum Vitae</h2>
-            <p>Affichage optimisé (Image AVIF pour économiser la bande passante ou version PDF interactive - 46 octets de différences 🤓🤌🏿) .</p>
+            <p>Mon CV au format image.</p>
 
-            <!-- Zone d'affichage dynamique -->
+            <!-- Affichage unique de l'image du CV -->
             <div id="visualiseur-cv" style="width: 100%; margin: 20px 0;">
-                <!-- Version Image AVIF (affichée par défaut) -->
-                <img id="cv-image" src="image/cv.avif" alt="CV de Louis Lachaire" class="cv-media">
-                
-                <!-- Version PDF (masquée par défaut) -->
-                <iframe id="cv-pdf" src="image/cv.pdf" class="cv-media" style="display: none;" title="CV PDF"></iframe>
+                <img id="cv-image" src="image/cv.avif" alt="CV de Louis Lachaire" class="cv-media" style="width: 100%; height: auto;">
             </div>
 
-            <!-- Barre de boutons d'action -->
+            <!-- Barre de boutons de téléchargement -->
             <div class="cv-boutons">
-                <button id="btn-vers-pdf" onclick="basculerVersPdf()" class="btn-action">Voir en version PDF</button>
-                <button id="btn-vers-avif" onclick="basculerVersAvif()" class="btn-action" style="display: none;">Voir en version Image (AVIF)</button>
+                <a href="image/cv.avif" download class="btn-action btn-telecharger">Télécharger le CV en .AVIF</a>
+                <a href="image/cv.pdf" download class="btn-action btn-telecharger">Télécharger le en pdf</a>
+            </div>
+
+            <!-- Contenu textuel du CV ajouté après les boutons -->
+            <div class="cv-texte-alternatif" style="margin-top: 40px;">
                 
-                <a href="image/cv.avif" download class="btn-action btn-telecharger">Télécharger l'image (AVIF)</a>
-                <a href="image/cv.pdf" download class="btn-action btn-telecharger">Télécharger le PDF</a>
+                <!-- En-tête du CV -->
+                <div class="cv-header-info">
+                    <h3>Joseph Nath_France</h3>
+                    <p><strong>Développeur Web</strong></p>
+                    <p>📞 06 01 02 03 04 | ✉️ <a href="https://www.youtube.com/watch?v=QDia3e12czc" target="_blank" rel="noopener noreferrer">salut@canvasupersite.fr</a></p>
+                </div>
+
+                <!-- À propos de moi -->
+                <section class="cv-section">
+                    <h4>À PROPOS DE MOI</h4>
+                    <p>Étudiant en DEUST à l'ULCO (2026-2028), passionné par le développement web, les outils open-source et la confidentialité numérique. Curieux et autonome, j'aime concevoir des petits outils pratiques, légers et efficaces, tout en explorant des technologies varied comme le traitement multimédia ou l'écosystème Rust.</p>
+                </section>
+
+                <!-- Compétences -->
+                <section class="cv-section">
+                    <h4>COMPÉTENCES</h4>
+                    <ul>
+                        <li><strong>Langages :</strong> HTML, CSS, JavaScript, Python, Rust</li>
+                        <li><strong>Développement :</strong> Front-End, Back-End, Responsive</li>
+                        <li><strong>Outils :</strong> Outils de collaboration, Outils de tests, Éditeurs de code modernes</li>
+                        <li><strong>Soft Skills :</strong> Résolution de problèmes, Esprit d’équipe, Autonomie, Apprentissage continu, Adaptabilité</li>
+                    </ul>
+                </section>
+
+                <!-- Expériences -->
+                <section class="cv-section">
+                    <h4>EXPÉRIENCES</h4>
+                    
+                    <div class="cv-experience">
+                        <h5>Développeur Web Junior @ Réseau Protect - Alternance</h5>
+                        <p class="cv-date">2026 - Aujourd’hui</p>
+                        <p><strong>Missions :</strong></p>
+                        <ul>
+                            <li>Participation au développement de nouvelles fonctionnalités.</li>
+                            <li>Correction d'anomalies et maintenance applicative.</li>
+                            <li>Développement d'interfaces utilisateurs.</li>
+                            <li>Participation aux réunions d'équipe et aux revues de code.</li>
+                            <li>Rédaction de documentation technique.</li>
+                        </ul>
+                    </div>
+
+                    <div class="cv-experience" style="margin-top: 20px;">
+                        <h5>Développeur Full Stack @ Innovare Nest - Stage</h5>
+                        <p class="cv-date">2025</p>
+                        <p><strong>Missions :</strong></p>
+                        <ul>
+                            <li>Développement de fonctionnalités simples sur une application métier.</li>
+                            <li>Création de composants réutilisables.</li>
+                            <li>Tests et validation des développements.</li>
+                            <li>Participation aux phases de conception.</li>
+                        </ul>
+                        <p><strong>Réalisations :</strong></p>
+                        <ul>
+                            <li>Développement de plusieurs modules utilisés par les équipes internes.</li>
+                            <li>Création d'un tableau de bord permettant de suivre l'activité des utilisateurs.</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- Projets Personnels -->
+                <section class="cv-section">
+                    <h4>PROJETS PERSONNELS</h4>
+                    <ul>
+                        <li><strong>Application de Gestion de Bibliothèque :</strong> Gestion des emprunts, des utilisateurs et fonction de recherche avancée.</li>
+                        <li><strong>Plateforme de Réservation en Ligne :</strong> Création de comptes, réservation d'événements et gestion des disponibilités.</li>
+                    </ul>
+                    <p>Retrouvez tous mes projets en ligne sur mon portfolio : <a href="https://lachaire.github.io/portfolio-deust-26-28/" >https://lachaire.github.io/portfolio-deust-26-28/></a></p>
+                </section>
+
+                <!-- Formation -->
+                <section class="cv-section">
+                    <h4>FORMATION</h4>
+                    <ul>
+                        <li><strong>2026 - NOW :</strong> Deust - WMI | Ulco - Saint-Omer</li>
+                        <li><strong>2023 - 2026 :</strong> Licence informatique | Université de Lille</li>
+                    </ul>
+                </section>
+
             </div>
         </div>
     </main>
-
-    <!-- Script JavaScript pour basculer entre l'image et le PDF sans recharger -->
-    <script>
-        function basculerVersPdf() {
-            document.getElementById('cv-image').style.display = 'none';
-            document.getElementById('cv-pdf').style.display = 'block';
-            document.getElementById('btn-vers-pdf').style.display = 'none';
-            document.getElementById('btn-vers-avif').style.display = 'inline-block';
-        }
-
-        function basculerVersAvif() {
-            document.getElementById('cv-pdf').style.display = 'none';
-            document.getElementById('cv-image').style.display = 'block';
-            document.getElementById('btn-vers-avif').style.display = 'none';
-            document.getElementById('btn-vers-pdf').style.display = 'inline-block';
-        }
-    </script>
-
 </body>
 </html>
